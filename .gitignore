@@ -221,3 +221,15 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# Private datasets and prediction files
+Train_Data.csv
+Test_Data_No_Target.csv
+Group_52_Submission.csv
+
+# Data directories
+data/
+datasets/
+
+# Model artifacts
+*.pkl
+*.joblib
