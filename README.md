@@ -9,16 +9,21 @@ The project follows the CRISP-DM methodology, combining exploratory data analysi
 
 ## Business Objective
 
-The main objective is to identify customers at high risk of cancelling their course registrations, enabling the academy to implement targeted retention strategies, improve resource allocation, and reduce potential revenue loss.
+The primary objective is to identify customers at high risk of cancelling their course registrations, enabling the academy to:
+
+- Implement targeted customer retention strategies.
+- Reduce course cancellation rates.
+- Minimize potential revenue loss.
+- Improve operational planning and resource allocation.
+- Support data-driven decision-making.
 
 ## Dataset
 
-- Training dataset: 63,464 observations and 29 variables.
-- Test dataset: 15,866 observations and 28 variables.
-- Target variable: Dropped_Course (binary classification).
-- Cancellation rate: approximately 41.4%.
+- Training dataset: 63,464 observations.
+- Target variable: `Dropped_Course`.
+- Problem type: Binary Classification.
 
-The original datasets are not included in this repository due to data privacy and academic restrictions.
+The original datasets are not included in this public repository.
 
 ## Project Workflow
 
@@ -27,13 +32,13 @@ The original datasets are not included in this repository due to data privacy an
 - Statistical analysis and data visualization.
 - Target variable distribution analysis.
 - Correlation analysis.
-- Identification of cancellation patterns.
-- Detection of missing values, outliers, and data quality issues.
+- Identification of customer behavior and cancellation patterns.
+- Detection of missing values and outliers.
 
 ### 2. Data Preprocessing
 
-- Missing value imputation.
-- Categorical data standardization.
+- Missing value handling.
+- Data cleaning and standardization.
 - Outlier detection and treatment.
 - Categorical feature encoding.
 - Numerical feature scaling.
@@ -43,6 +48,7 @@ The original datasets are not included in this repository due to data privacy an
 - Creation of new predictive features.
 - Transformation of existing variables.
 - Identification of relevant customer and registration characteristics.
+- Preparation of data for machine learning models.
 
 ### 4. Machine Learning Models
 
@@ -52,47 +58,46 @@ Three classification algorithms were implemented and evaluated:
 - Random Forest
 - XGBoost
 
-Model optimization was performed using:
+Model development and optimization included:
 
 - Cross-Validation
 - RandomizedSearchCV
 - GridSearchCV
 - Hyperparameter Tuning
+- Overfitting Prevention
+- Model Comparison
 
 ## Model Performance
 
-ROC-AUC was selected as the primary evaluation metric.
+ROC-AUC was selected as the primary evaluation metric to assess the models' ability to distinguish between cancelled and non-cancelled course registrations.
 
-| Model | Cross-Validation ROC-AUC |
-|---|---:|
-| Logistic Regression (Baseline) | 0.8975 |
-| Random Forest | 0.9243 |
-| XGBoost (Randomized Search) | 0.9445 |
-| XGBoost (Final Selected Model) | 0.9302 |
+The final selected XGBoost model achieved a cross-validation ROC-AUC score of **0.9302**.
 
-The final XGBoost configuration was selected with an emphasis on model stability and generalization.
+Model selection focused on predictive performance, stability, and generalization.
 
-Final hyperparameters:
+Additional evaluation methods included:
 
-- Learning rate: 0.1
-- Maximum depth: 4
-- Number of estimators: 150
-
-Additional evaluation metrics included accuracy, precision, recall, F1-score, and confusion matrices.
+- Accuracy
+- Precision
+- Recall
+- F1-Score
+- Confusion Matrix
 
 ## Model Explainability
 
-Feature importance and SHAP (SHapley Additive exPlanations) were used to interpret the model's predictions and identify the key factors associated with cancellation risk.
+Feature importance and SHAP (SHapley Additive exPlanations) were used to interpret model predictions and identify the key factors associated with course cancellation risk.
 
-## Key Business Insights
+## Business Value
 
-- Customers who register further in advance tend to have a higher cancellation risk.
-- Previous course cancellations are strong predictors of future cancellations.
-- Returning customers tend to have a lower cancellation risk.
-- Longer waiting periods are associated with higher cancellation rates.
-- Physical course kits are associated with a lower predicted cancellation risk.
+The predictive model can support proactive customer retention by identifying high-risk registrations before cancellations occur.
 
-These findings can support targeted customer retention initiatives and more informed operational decisions.
+Potential business applications include:
+
+- Personalized customer communication.
+- Targeted retention campaigns.
+- Identification of high-risk customer segments.
+- Improved customer experience.
+- Better operational and financial planning.
 
 ## Technologies & Libraries
 
@@ -109,14 +114,20 @@ These findings can support targeted customer retention initiatives and more info
 
 ## Repository Structure
 
-- README.md - Project documentation
-- course_cancellation_prediction.ipynb - Data analysis and machine learning implementation
-- requirements.txt - Python dependencies
-- .gitignore - Git configuration
+| File | Description |
+| --- | --- |
+| `README.md` | Project documentation |
+| `course_cancellation_prediction.ipynb` | Data analysis and machine learning implementation |
+| `requirements.txt` | Required Python libraries |
+| `.gitignore` | Git configuration |
 
 ## Data Availability
 
-The original training and test datasets are not publicly distributed as part of this repository. Reproducing the model training and generating predictions requires access to the original datasets.
+The original training and test datasets are not publicly distributed as part of this repository.
+
+The repository is intended to demonstrate the project's methodology, machine learning implementation, analytical approach, and model performance.
+
+Access to the original datasets is required to reproduce the model training and predictions.
 
 ## Authors
 
